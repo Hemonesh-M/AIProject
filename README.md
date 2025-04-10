@@ -38,13 +38,28 @@ AIProject/
 | mAP@0.5     | 21.1%     |
 | mAP@0.5:0.95| 8.5%      |
 
-## 🎥 Live Inference
-To run live webcam detection:
+## 🚀 Quick Start
+
+### Step 1: Clone the repo
+
 ```bash
-python detect.py --weights runs/train/mask_detector/weights/best.pt --source 0 --conf 0.4
+git clone [https://github.com/your-username/AIProject.git](https://github.com/your-username/AIProject.git)
+cd AIProject
+```
+Step 2: Install dependencies
+```bash
+
+pip install -r requirements.txt
 ```
 
-To test on an image:
+## 🎥 Live Inference
+To run live webcam detection:
+
+```bash
+
+python detect.py --weights runs/train/mask_detector/weights/best.pt --source 0 --conf 0.4
+```
+## To test on an image:
 ```bash
 python detect.py --weights runs/train/mask_detector/weights/best.pt --source path/to/image.jpg --conf 0.4
 ```
