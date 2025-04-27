@@ -43,8 +43,9 @@ AIProject/
 ### Step 1: Clone the repo
 
 ```bash
-git clone [https://github.com/your-username/AIProject.git](https://github.com/your-username/AIProject.git)
+git clone https://github.com/Hemonesh-M/AIProject.git
 cd AIProject
+
 ```
 Step 2: Install dependencies
 ```bash
