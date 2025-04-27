@@ -31,12 +31,24 @@ AIProject/
 - 🖥️ Hardware: Trained using NVIDIA RTX 3070 GPU
 
 ## 📈 Results (after 50 epochs)
-| Metric      | Value     |
-|-------------|-----------|
-| Precision   | 83.1%     |
-| Recall      | 19.2%     |
-| mAP@0.5     | 21.1%     |
-| mAP@0.5:0.95| 8.5%      |
+
+| Metric         | Value     |
+|----------------|-----------|
+| Precision      | 79.4%     |
+| Recall         | 77.4%     |
+| mAP@0.5        | 78.3%     |
+| mAP@0.5:0.95   | 50.8%     |
+
+<details>
+<summary>🔎 Per-Class Performance</summary>
+
+| Class                  | Precision | Recall | mAP@0.5 | mAP@0.5:0.95 |
+|-------------------------|-----------|--------|---------|--------------|
+| with_mask               | 86.1%     | 90.3%  | 93.4%   | 60.8%        |
+| without_mask            | 76.7%     | 83.0%  | 84.6%   | 52.6%        |
+| mask_weared_incorrect   | 75.4%     | 58.8%  | 56.7%   | 39.1%        |
+
+</details>
 
 ## 🚀 Quick Start
 
