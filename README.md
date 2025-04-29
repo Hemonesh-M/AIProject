@@ -9,13 +9,16 @@ This project implements a real-time face mask detection system using the YOLOv5 
 ```
 AIProject/
 ├── archive/                # Original dataset in PASCAL VOC format (XML + images)
-│   └── annotations/        # XML label files
+│ └── annotations/          # XML label files
 ├── dataset/                # YOLO formatted data (images + labels)
-│   ├── images/
-│   └── labels/
+│ ├── images/
+│ └── labels/
 ├── yolov5/                 # YOLOv5 cloned from Ultralytics repo
-│   └── runs/train/         # Training outputs and logs
-├── face_mask.yaml          # Custom dataset config file
+│ ├── ...                   # (YOLOv5 codebase)
+│ └── data/
+│ └── face_mask.yaml        # ⭐️ Dataset config file (highlighted)
+├── convert_voc_to_yolo.py  # VOC→YOLO format converter
+├── split.py                # Dataset train/val split script
 └── README.md               # Project overview (this file)
 ```
 
@@ -29,6 +32,39 @@ AIProject/
 - 🧠 Transfer Learning: Fine-tuned for 3-class mask detection
 - ⚙️ Config: 50 epochs, batch size 16, image size 640x640
 - 🖥️ Hardware: Trained using NVIDIA RTX 3070 GPU
+---
+
+## 🔄 Workflow Overview
+
+- **VOC dataset (XML)**  
+  *Location:* `archive/annotations/`
+
+- **convert_voc_to_yolo.py**  
+  *Script:* `convert_voc_to_yolo.py`  
+  *Function:* Converts VOC XML to YOLO TXT format
+
+- **YOLO format dataset (TXT)**  
+  *Location:* `dataset/images/`, `dataset/labels/`
+
+- **split.py**  
+  *Script:* `split.py`  
+  *Function:* Splits dataset into train/val sets
+
+- **face_mask.yaml**  
+  *File:* `yolov5/data/face_mask.yaml`  
+  *Function:* Dataset configuration (paths, classes)
+
+- **train.py**  
+  *Script:* `yolov5/train.py`  
+  *Function:* Trains YOLOv5 model
+
+- **best.pt**  
+  *Location:* `yolov5/runs/train/exp/weights/best.pt`  
+  *Function:* Saved best model weights
+
+- **detect.py**  
+  *Script:* `yolov5/detect.py`  
+  *Function:* Inference on images or webcam
 
 ## 📈 Results (after 50 epochs)
 
